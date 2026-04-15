@@ -1,58 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>90's Mart</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>90's Mart – Farm Fresh Vegetables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f6faf5;
+      color: #1e3d2b;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    header img {
+      height: 48px;
+    }
+
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #2f6e3f;
+      font-size: 15px;
+    }
+
+    /* HERO */
+    .hero {
+      background-image: url("https://images.unsplash.com/photo-1597362925123-77861d3fbac7");
+      background-size: cover;
+      background-position: center;
+      padding: 70px 20px;
+    }
+
+    .hero-content {
+      max-width: 500px;
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: #4a6656;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-shop {
+      background: #2f8f46;
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    /* FEATURE CARDS */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .feature {
+      background: white;
+      padding: 22px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .feature img {
+      height: 42px;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: #577765;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: #e7f3ec;
+      font-size: 14px;
+      color: #2f6e3f;
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="logo">90's Mart</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Shop</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <img src="https://res.cloudinary.com/dqlr0jfdt/image/upload/v1776238427/kslshlqqkeoz3wa1h4fq.png" alt="90's Mart">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <div class="overlay"></div>
-
-  <div class="content">
-    <h1>Farm Fresh Vegetables.<br>Delivered Direct.</h1>
-    <p>No chemicals. No preservatives,<br>
-    Packed and delivered straight from the farmers.</p>
-
-    <div class="buttons">
-      <button class="btn primary">Open App</button>
-      <button class="btn secondary">Download Now</button>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Farm Fresh Vegetables. Delivered Direct.</h1>
+      <p>
+        No chemicals. No preservatives.  
+        Packed and delivered straight from trusted farmers.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-shop">Shop Now</a>
+        <a href="https://wa.me/919999999999" class="btn btn-whatsapp">
+          Order on WhatsApp
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="features">
-  <div class="card">
-    <h3>🚜 Direct from Farmers</h3>
-    <p>Harvested and packed fresh</p>
-  </div>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/tractor.png">
+      <h3>Direct from Farmers</h3>
+      <p>Harvested and packed fresh</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/snowflake.png">
+      <h3>No Cold Storage</h3>
+      <p>Never stored, straight from farm</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/leaf.png">
+      <h3>Fresh & Natural</h3>
+      <p>No chemicals or preservatives</p>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>❄️ No Cold Storage</h3>
-    <p>Never stored. Straight from the farm</p>
-  </div>
-
-  <div class="card">
-    <h3>🌿 Fresh & Natural</h3>
-    <p>No chemicals or preservatives</p>
-  </div>
-</section>
-
-<section class="trust">
-  <h2>Join 10,000+ families eating healthy!</h2>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    Join 10,000+ families eating healthy with 90’s Mart 💚
+  </footer>
 
 </body>
 </html>
+``
