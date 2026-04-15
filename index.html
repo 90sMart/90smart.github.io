@@ -23,21 +23,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
+      padding: 18px 24px;
       background: #ffffff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     header img {
-      height: 48px;
+      height: 64px; /* ✅ bigger logo */
     }
 
     nav a {
-      margin-left: 18px;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
       color: #2f6e3f;
       font-size: 15px;
+      cursor: pointer;
     }
 
     /* HERO */
@@ -46,24 +47,27 @@
       background-size: cover;
       background-position: center;
       padding: 70px 20px;
+      display: flex;
+      justify-content: flex-start;
     }
 
     .hero-content {
-      max-width: 500px;
+      max-width: 420px;              /* ✅ smaller card */
       background: rgba(255,255,255,0.9);
-      padding: 30px;
+      padding: 24px;                 /* ✅ smaller padding */
       border-radius: 12px;
+      margin-left: 40px;
     }
 
     .hero h1 {
-      font-size: 30px;
+      font-size: 26px;
       margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: 15px;
+      font-size: 14px;
       color: #4a6656;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       line-height: 1.6;
     }
 
@@ -74,27 +78,24 @@
     }
 
     .btn {
-      padding: 12px 18px;
+      padding: 10px 16px;
       font-size: 14px;
       font-weight: 600;
       border-radius: 6px;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      color: white;
+      display: inline-block;
     }
 
-    .btn-shop {
+    .btn-open {
       background: #2f8f46;
-      color: white;
     }
 
-    .btn-whatsapp {
-      background: #25D366;
-      color: white;
+    .btn-download {
+      background: #007bff;
     }
 
-    /* FEATURE CARDS */
+    /* FEATURES */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -135,6 +136,44 @@
       font-size: 14px;
       color: #2f6e3f;
     }
+
+    /* MODALS */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-box {
+      background: white;
+      padding: 24px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 420px;
+    }
+
+    .modal-box h2 {
+      margin-bottom: 10px;
+      color: #2f8f46;
+    }
+
+    .modal-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .close {
+      margin-top: 14px;
+      color: #007bff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
   </style>
 </head>
 
@@ -144,10 +183,9 @@
   <header>
     <img src="https://res.cloudinary.com/dqlr0jfdt/image/upload/v1776238427/kslshlqqkeoz3wa1h4fq.png" alt="90's Mart">
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
+      <a>Home</a>
+      <a onclick="openModal('about')">About</a>
+      <a onclick="openModal('contact')">Contact</a>
     </nav>
   </header>
 
@@ -156,14 +194,12 @@
     <div class="hero-content">
       <h1>Farm Fresh Vegetables. Delivered Direct.</h1>
       <p>
-        No chemicals. No preservatives.  
+        No chemicals. No preservatives. <br>
         Packed and delivered straight from trusted farmers.
       </p>
       <div class="hero-buttons">
-        <a href="#" class="btn btn-shop">Shop Now</a>
-        <a href="https://wa.me/919999999999" class="btn btn-whatsapp">
-          Order on WhatsApp
-        </a>
+        <a href="#" class="btn btn-open">Open App</a>
+        <a href="#" class="btn btn-download">Download App</a>
       </div>
     </div>
   </section>
@@ -192,6 +228,40 @@
     Join 10,000+ families eating healthy with 90’s Mart 💚
   </footer>
 
+  <!-- ABOUT MODAL -->
+  <div class="modal" id="about">
+    <div class="modal-box">
+      <h2>About 90’s Mart</h2>
+      <p>
+        90’s Mart is inspired by healthy traditional grocery practices.
+        We source fresh produce directly from farmers and focus on
+        quality, trust, and natural living.
+      </p>
+      <div class="close" onclick="closeModal('about')">Close</div>
+    </div>
+  </div>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal" id="contact">
+    <div class="modal-box">
+      <h2>Contact Us</h2>
+      <p>
+        📍 Bengaluru, India<br>
+        📧 support@90smart.com<br>
+        📞 +91 98765 43210
+      </p>
+      <div class="close" onclick="closeModal('contact')">Close</div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
-``
