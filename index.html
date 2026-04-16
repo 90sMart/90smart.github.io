@@ -26,10 +26,12 @@
       padding: 18px 24px;
       background: #ffffff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 10;
     }
 
     header img {
-      height: 64px; /* ✅ bigger logo */
+      height: 64px;
     }
 
     nav a {
@@ -41,34 +43,48 @@
       cursor: pointer;
     }
 
-    /* HERO */
+    /* HERO WITH CAROUSEL */
     .hero {
-      background-image: url("https://images.unsplash.com/photo-1597362925123-77861d3fbac7");
-      background-size: cover;
-      background-position: center;
+      position: relative;
       padding: 70px 20px;
+      height: 420px;
       display: flex;
-      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .hero-carousel {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-carousel img.active {
+      opacity: 1;
     }
 
     .hero-content {
-      max-width: 420px;              /* ✅ smaller card */
+      max-width: 420px;
       background: rgba(255,255,255,0.9);
-      padding: 24px;                 /* ✅ smaller padding */
+      padding: 24px;
       border-radius: 12px;
       margin-left: 40px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
       font-size: 26px;
       margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: 14px;
-      color: #4a6656;
-      margin-bottom: 18px;
-      line-height: 1.6;
     }
 
     .hero-buttons {
@@ -136,6 +152,59 @@
       font-size: 14px;
       color: #2f6e3f;
     }
+    /* FOOTER MESSAGE */
+.footer-message {
+  text-align: center;
+  padding: 30px 20px;
+  background: #e7f3ec;
+}
+
+.footer-primary {
+  font-size: 10px;
+  font-weight: 700;
+  color: #1e3d2b;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.footer-secondary {
+  font-size: 8px;
+  font-weight: 500;
+  color: #4a6656;
+  line-height: 1.4;
+}
+
+	/* SOCIAL MEDIA SECTION */
+.social-section {
+  text-align: center;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.social-section p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2f6e3f;
+  margin-bottom: 12px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-icons img {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
 
     /* MODALS */
     .modal {
@@ -174,94 +243,179 @@
       cursor: pointer;
       font-size: 14px;
     }
+
+    /* Privacy Policy & Terms links */
+.legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.legal-links a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2f6e3f;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #4a6656;
+  font-size: 13px;
+}
+
+
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="https://res.cloudinary.com/dqlr0jfdt/image/upload/v1776238427/kslshlqqkeoz3wa1h4fq.png" alt="90's Mart">
-    <nav>
-      <a>Home</a>
-      <a onclick="openModal('about')">About</a>
-      <a onclick="openModal('contact')">Contact</a>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header>
+  <img src="https://res.cloudinary.com/dqlr0jfdt/image/upload/v1776238427/kslshlqqkeoz3wa1h4fq.png" alt="90's Mart">
+  <nav>
+    <a>Home</a>
+    <a onclick="openModal('about')">About</a>
+    <a onclick="openModal('contact')">Contact</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Farm Fresh Vegetables. Delivered Direct.</h1>
-      <p>
-        No chemicals. No preservatives. <br>
-        Packed and delivered straight from trusted farmers.
-      </p>
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-open">Open App</a>
-        <a href="#" class="btn btn-download">Download App</a>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero">
 
-  <!-- FEATURES -->
-  <section class="features">
-    <div class="feature">
-      <img src="https://img.icons8.com/color/96/tractor.png">
-      <h3>Direct from Farmers</h3>
-      <p>Harvested and packed fresh</p>
-    </div>
-    <div class="feature">
-      <img src="https://img.icons8.com/color/96/snowflake.png">
-      <h3>No Cold Storage</h3>
-      <p>Never stored, straight from farm</p>
-    </div>
-    <div class="feature">
-      <img src="https://img.icons8.com/color/96/leaf.png">
-      <h3>Fresh & Natural</h3>
-      <p>No chemicals or preservatives</p>
-    </div>
-  </section>
+  <!-- ✅ IMAGE CAROUSEL (LOCAL GITHUB PAGES IMAGES) -->
+  <div class="hero-carousel">
+    <img src="http://90smart.github.io/images/dan-gold-4_jhDO54BYg-unsplash.jpg" class="active">
+    <img src="http://90smart.github.io/images/inigo-de-la-maza-s285sDw5Ikc-unsplash.jpg">
+    <img src="http://90smart.github.io/images/sharon-pittaway-KUZnfk-2DSQ-unsplash.jpg">
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    Join 10,000+ families eating healthy with 90’s Mart 💚
-  </footer>
-
-  <!-- ABOUT MODAL -->
-  <div class="modal" id="about">
-    <div class="modal-box">
-      <h2>About 90’s Mart</h2>
-      <p>
-        90’s Mart is inspired by healthy traditional grocery practices.
-        We source fresh produce directly from farmers and focus on
-        quality, trust, and natural living.
-      </p>
-      <div class="close" onclick="closeModal('about')">Close</div>
+  <div class="hero-content">
+    <h3>Connecting local farmers with families who value real food.</h3></br>
+    <div class="hero-buttons">
+      <a href="https://webapphosting-73182.web.app"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-open">
+        Open App
+      </a>
+      <a href="#" class="btn btn-download">Download App</a>
     </div>
   </div>
 
-  <!-- CONTACT MODAL -->
-  <div class="modal" id="contact">
-    <div class="modal-box">
-      <h2>Contact Us</h2>
-      <p>
-        📍 Bengaluru, India<br>
-        📧 90smatindia@gmail.com<br>
-        📞 +91 98XX5 43210
-      </p>
-      <div class="close" onclick="closeModal('contact')">Close</div>
-    </div>
-  </div>
+</section>
 
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-  </script>
+<!-- FEATURES -->
+<section class="features">
+  <div class="feature">
+    <img src="https://90smart.in/images/gardener.png">
+    <h3>Direct from Farmers</h3>
+    <p>Harvested and packed fresh</p>
+  </div>
+  <div class="feature">
+    <img src="https://img.icons8.com/color/96/snowflake.png">
+    <h3>No Cold Storage</h3>
+    <p>Never stored, straight from farm</p>
+  </div>
+  <div class="feature">
+    <img src="https://90smart.in/images/natural-product.png">
+    <h3>Fresh &amp; Natural</h3>
+    <p>No chemicals or preservatives</p>
+  </div>
+</section>
+
+<footer class="footer-message">
+  <p class="footer-primary">
+    Give your children a healthier future by choosing better food today
+  </p>
+  <p class="footer-secondary">
+    Start your journey towards fresh, chemical‑free food with 90’s Mart 💚
+  </p>
+</footer>
+
+<!-- SOCIAL MEDIA SECTION -->
+<div class="social-section">
+  <p>Connect with us on social media</p>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/your_instagram_handle" target="_blank" aria-label="Instagram">
+      <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram">
+    </a>
+
+    <a href="https://www.youtube.com/@your_youtube_channel" target="_blank" aria-label="YouTube">
+      <img src="https://img.icons8.com/fluency/48/youtube-play.png" alt="YouTube">
+    </a>
+  </div>
+</div>
+<div class="legal-links">
+  <a href="privacy-policy.html" target="_blank">
+    Privacy Policy
+  </a>
+
+  <span class="separator">|</span>
+
+  <a href="terms-of-service.html" target="_blank">
+    Terms of Service
+  </a>
+</div>
+
+
+<script>
+  const slides = document.querySelectorAll(".hero-carousel img");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3500);
+
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+</script>
+<!-- ABOUT MODAL -->
+<div class="modal" id="about">
+  <div class="modal-box">
+    <h2>About 90’s Mart</h2>
+    <p>
+      90’s Mart is built on the idea of bringing back traditional
+      and healthy food practices. We work directly with
+      trusted local farmers to source fresh vegetables that are
+      free from harmful chemicals and preservatives.
+      <br><br>
+      Our goal is simple: deliver farm‑fresh products to your home
+      while ensuring quality, transparency, and fair pricing for
+      both consumers and farmers.
+    </p>
+    <div class="close" onclick="closeModal('about')">Close</div>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal" id="contact">
+  <div class="modal-box">
+    <h2>Contact Us</h2>
+    <p>
+      📍 Karimnagar, India<br><br>
+      📧 Email: 90smartindia@gmail.com<br>
+      📞 Phone: +91 9XXX XXX XXX<br><br>
+      We are available 24/7,
+      9:00 AM – 8:00 PM.
+    </p>
+    <div class="close" onclick="closeModal('contact')">Close</div>
+  </div>
+</div>
+
 
 </body>
 </html>
