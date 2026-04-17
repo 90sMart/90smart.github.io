@@ -44,15 +44,7 @@
     }
 
     /* HERO WITH CAROUSEL */
-    .hero {
-      position: relative;
-      padding: 70px 20px;
-      height: 420px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-carousel {
+   .hero-carousel {
       position: absolute;
       inset: 0;
       overflow: hidden;
@@ -71,8 +63,16 @@
     .hero-carousel img.active {
       opacity: 1;
     }
-
     .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: center;      /* ✅ text centered */
+  color: #173f2f;
+  margin: 0 auto;   
+}
+
+   /* .hero-content {
       max-width: 420px;
       background: rgba(255,255,255,0.9);
       padding: 24px;
@@ -80,35 +80,43 @@
       margin-left: 40px;
       position: relative;
       z-index: 2;
-    }
+    }*/
+    .hero {
+  position: relative;
+  padding: 70px 20px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* ✅ horizontal center */
+}
+
 
   /* Hero card heading – precise control */
 .hero-heading {
-  font-size: 14px;
+  font-size: 26px;
   font-weight: 700;
-  color: #173f2f;
-  margin-bottom: 24px;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  animation: floatingText 4s ease-in-out infinite;
 }
 
 /* First line */
 .hero-line-1 {
   display: block;
-  line-height: 1.4;
 }
 
 /* Second line */
 .hero-line-2 {
   display: block;
-  margin-top: 6px;        /* ✅ VISIBLE GAP */
-  line-height: 1.4;
-  text-align: center;    /* ✅ LOWER LINE CENTERED */
+  margin-top: 8px;
   font-weight: 700;
 }
+
 
 /* Mobile tuning */
 @media (max-width: 600px) {
   .hero-heading {
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 0px;
     text-align: center; 
   }
@@ -127,7 +135,7 @@
 
     .btn {
       padding: 10px 16px;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 600;
       border-radius: 6px;
       text-decoration: none;
@@ -135,6 +143,9 @@
       white-space: nowrap;
       display: inline-block;
     }
+    
+
+
 
     .btn-open {
       background: #2f8f46;
@@ -143,6 +154,60 @@
     .btn-download {
       background: #007bff;
     }
+
+     /* TYPEWRITER ANIMATION */
+/* ===== TWO-LINE TYPEWRITER ===== */
+
+/* ===== SEQUENTIAL TYPEWRITER WITH FADE OUT ===== */
+
+.hero-heading {
+  text-align: center;
+}
+
+/* Base typewriter */
+/* MULTI-LINE TYPEWRITER (CENTERED) */
+
+
+.hero-heading {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+
+
+
+#typewriter {
+  display: inline-block;
+  max-width: 300px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  color: #ffffff;
+}
+
+
+
+
+
+@keyframes typingClip {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  40% {
+    clip-path: inset(0 0 0 0);
+  }
+  80% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+
+
 
     /* FEATURES */
     .features {
@@ -336,13 +401,11 @@
   </div>
 
   <div class="hero-content">
-   <h3 class="hero-heading">
-  <span class="hero-line-1">
-    Connecting local farmers with families
-  </span>
-  <span class="hero-line-2">
-    who value real food.
-  </span>
+<h1 class="hero-heading">
+  <span id="typewriter"></span>
+</h1>
+
+
 </h3>
     <div class="hero-buttons">
       <a href="https://webapphosting-73182.web.app"
@@ -464,6 +527,45 @@
     <div class="close" onclick="closeModal('contact')">Close</div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const text =
+      "Connecting local farmers with families who value real food.";
+
+    const typingSpeed = 80;      // ms per letter
+    const pauseAfterType = 1500; // pause before fade out
+    const fadeDuration = 800;    // match CSS transition
+
+    const el = document.getElementById("typewriter");
+    let index = 0;
+
+    function startTyping() {
+      el.textContent = "";
+      el.style.opacity = "1";
+      index = 0;
+      type();
+    }
+
+    function type() {
+      if (index < text.length) {
+        el.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, typingSpeed);
+      } else {
+        // finished typing → pause → fade out → restart
+        setTimeout(() => {
+          el.style.opacity = "0";
+
+          setTimeout(startTyping, fadeDuration);
+        }, pauseAfterType);
+      }
+    }
+
+    startTyping();
+  });
+</script>
+
+
 
 
 </body>
