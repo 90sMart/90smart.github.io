@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>90's Mart – Farm Fresh Vegetables</title>
@@ -25,7 +26,7 @@
       align-items: center;
       padding: 18px 24px;
       background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       position: relative;
       z-index: 10;
     }
@@ -44,7 +45,7 @@
     }
 
     /* HERO WITH CAROUSEL */
-   .hero-carousel {
+    .hero-carousel {
       position: absolute;
       inset: 0;
       overflow: hidden;
@@ -63,16 +64,18 @@
     .hero-carousel img.active {
       opacity: 1;
     }
-    .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  text-align: center;      /* ✅ text centered */
-  color: #173f2f;
-  margin: 0 auto;   
-}
 
-   /* .hero-content {
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      text-align: center;
+      /* ✅ text centered */
+      color: #173f2f;
+      margin: 0 auto;
+    }
+
+    /* .hero-content {
       max-width: 420px;
       background: rgba(255,255,255,0.9);
       padding: 24px;
@@ -82,55 +85,60 @@
       z-index: 2;
     }*/
     .hero {
-  position: relative;
-  padding: 70px 20px;
-  height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;  /* ✅ horizontal center */
-}
+      position: relative;
+      padding: 70px 20px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* ✅ horizontal center */
+    }
 
 
-  /* Hero card heading – precise control */
-.hero-heading {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 28px;
-  animation: floatingText 4s ease-in-out infinite;
-}
 
-/* First line */
-.hero-line-1 {
-  display: block;
-}
+    /* Hero card heading – precise control */
+    .hero-heading {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      min-height: 90px;/* ✅ reserves space for 2 lines */
+      animation: floatingText 4s ease-in-out infinite;
+    }
 
-/* Second line */
-.hero-line-2 {
-  display: block;
-  margin-top: 8px;
-  font-weight: 700;
-}
+    /* First line */
+    .hero-line-1 {
+      display: block;
+    }
+
+    /* Second line */
+    .hero-line-2 {
+      display: block;
+      margin-top: 8px;
+      font-weight: 700;
+    }
 
 
-/* Mobile tuning */
-@media (max-width: 600px) {
-  .hero-heading {
-    font-size: 15px;
-    margin-top: 0px;
-    text-align: center; 
-  }
+    /* Mobile tuning */
+    @media (max-width: 600px) {
 
-  .hero-line-2 {
-    margin-top: 4px;
-  }
-}
+      .hero-heading {
+        min-height: 90px;/* ✅ reserves space for 2 lines */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-line-2 {
+        margin-top: 4px;
+      }
+    }
 
     .hero-buttons {
       display: flex;
       gap: 15px;
       flex-wrap: nowrap;
-      justify-content: center; 
+      justify-content: center;
     }
 
     .btn {
@@ -143,8 +151,6 @@
       white-space: nowrap;
       display: inline-block;
     }
-    
-
 
 
     .btn-open {
@@ -155,56 +161,60 @@
       background: #007bff;
     }
 
-     /* TYPEWRITER ANIMATION */
-/* ===== TWO-LINE TYPEWRITER ===== */
+    /* TYPEWRITER ANIMATION */
+    /* ===== TWO-LINE TYPEWRITER ===== */
 
-/* ===== SEQUENTIAL TYPEWRITER WITH FADE OUT ===== */
+    /* ===== SEQUENTIAL TYPEWRITER WITH FADE OUT ===== */
 
-.hero-heading {
-  text-align: center;
-}
+    .hero-heading {
+      text-align: center;
+    }
 
-/* Base typewriter */
-/* MULTI-LINE TYPEWRITER (CENTERED) */
-
-
-.hero-heading {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.4;
-}
+    /* Base typewriter */
+    /* MULTI-LINE TYPEWRITER (CENTERED) */
 
 
-
-
-#typewriter {
-  display: inline-block;
-  max-width: 300px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  color: #ffffff;
-}
+    .hero-heading {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
 
 
 
 
+    #typewriter {
+      display: inline-block;
+      max-width: 400px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
 
-@keyframes typingClip {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  40% {
-    clip-path: inset(0 0 0 0);
-  }
-  80% {
-    clip-path: inset(0 0 0 0);
-  }
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
+
+
+
+
+    @keyframes typingClip {
+      0% {
+        clip-path: inset(0 100% 0 0);
+      }
+
+      40% {
+        clip-path: inset(0 0 0 0);
+      }
+
+      80% {
+        clip-path: inset(0 0 0 0);
+      }
+
+      100% {
+        clip-path: inset(0 100% 0 0);
+      }
+    }
 
 
 
@@ -224,7 +234,7 @@
       padding: 22px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .feature img {
@@ -250,58 +260,59 @@
       font-size: 14px;
       color: #2f6e3f;
     }
+
     /* FOOTER MESSAGE */
-.footer-message {
-  text-align: center;
-  padding: 30px 20px;
-  background: #e7f3ec;
-}
+    .footer-message {
+      text-align: center;
+      padding: 30px 20px;
+      background: #e7f3ec;
+    }
 
-.footer-primary {
-  font-size: 10px;
-  font-weight: 700;
-  color: #1e3d2b;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
+    .footer-primary {
+      font-size: 10px;
+      font-weight: 700;
+      color: #1e3d2b;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
 
-.footer-secondary {
-  font-size: 8px;
-  font-weight: 500;
-  color: #4a6656;
-  line-height: 1.4;
-}
+    .footer-secondary {
+      font-size: 8px;
+      font-weight: 500;
+      color: #4a6656;
+      line-height: 1.4;
+    }
 
-	/* SOCIAL MEDIA SECTION */
-.social-section {
-  text-align: center;
-  padding: 24px;
-  background: #ffffff;
-}
+    /* SOCIAL MEDIA SECTION */
+    .social-section {
+      text-align: center;
+      padding: 24px;
+      background: #ffffff;
+    }
 
-.social-section p {
-  font-size: 15px;
-  font-weight: 600;
-  color: #2f6e3f;
-  margin-bottom: 12px;
-}
+    .social-section p {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2f6e3f;
+      margin-bottom: 12px;
+    }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
 
-.social-icons img {
-  width: 42px;
-  height: 42px;
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
+    .social-icons img {
+      width: 42px;
+      height: 42px;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
 
-.social-icons img:hover {
-  transform: scale(1.1);
-}
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
 
 
     /* MODALS */
@@ -309,7 +320,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       align-items: center;
       justify-content: center;
       z-index: 1000;
@@ -343,230 +354,227 @@
     }
 
     /* Privacy Policy & Terms links */
-.legal-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  margin-bottom: 60px;  
-  gap: 10px;
-}
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 12px;
+      margin-bottom: 60px;
+      gap: 10px;
+    }
 
-.legal-links a {
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  color: #2f6e3f;
-}
+    .legal-links a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2f6e3f;
+    }
 
-.legal-links a:hover {
-  text-decoration: underline;
-}
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
 
-.separator {
-  color: #4a6656;
-  font-size: 13px;
-}
-.copyright-text {
-  text-align: center;
-  font-size: 12px;
-  color: #6a8575;
-  margin: 12px 0 20px;
-}
+    .separator {
+      color: #4a6656;
+      font-size: 13px;
+    }
 
-
+    .copyright-text {
+      text-align: center;
+      font-size: 12px;
+      color: #6a8575;
+      margin: 12px 0 20px;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <img src="https://res.cloudinary.com/dqlr0jfdt/image/upload/v1776238427/kslshlqqkeoz3wa1h4fq.png" alt="90's Mart">
-  <nav>
-    <a>Home</a>
-    <a onclick="openModal('about')">About</a>
-    <a onclick="openModal('contact')">Contact</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <img src="https://res.cloudinary.com/dqlr0jfdt/image/upload/v1776238427/kslshlqqkeoz3wa1h4fq.png" alt="90's Mart">
+    <nav>
+      <a>Home</a>
+      <a onclick="openModal('about')">About</a>
+      <a onclick="openModal('contact')">Contact</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
+  <!-- HERO -->
+  <section class="hero">
 
-  <!-- ✅ IMAGE CAROUSEL (LOCAL GITHUB PAGES IMAGES) -->
-  <div class="hero-carousel">
-    <img src="http://90smart.github.io/images/dan-gold-4_jhDO54BYg-unsplash.jpg" class="active">
-    <img src="http://90smart.github.io/images/inigo-de-la-maza-s285sDw5Ikc-unsplash.jpg">
-    <img src="http://90smart.github.io/images/sharon-pittaway-KUZnfk-2DSQ-unsplash.jpg">
-  </div>
+    <!-- ✅ IMAGE CAROUSEL (LOCAL GITHUB PAGES IMAGES) -->
+    <div class="hero-carousel">
+      <img src="http://90smart.github.io/images/dan-gold-4_jhDO54BYg-unsplash.jpg" class="active">
+      <img src="http://90smart.github.io/images/inigo-de-la-maza-s285sDw5Ikc-unsplash.jpg">
+      <img src="http://90smart.github.io/images/sharon-pittaway-KUZnfk-2DSQ-unsplash.jpg">
+    </div>
 
-  <div class="hero-content">
-<h1 class="hero-heading">
-  <span id="typewriter"></span>
-</h1>
+    <div class="hero-content">
+      <h1 class="hero-heading">
+        <span id="typewriter"></span>
+      </h1>
 
 
-</h3>
-    <div class="hero-buttons">
-      <a href="https://webapphosting-73182.web.app"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn btn-open">
-        Open App
+      </h3>
+      <div class="hero-buttons">
+        <a href="https://webapphosting-73182.web.app" target="_blank" rel="noopener noreferrer" class="btn btn-open">
+          Open App
+        </a>
+        <a href="#" class="btn btn-download">Download App</a>
+      </div>
+    </div>
+
+  </section>
+  <footer class="footer-message">
+    <p class="footer-primary">
+      Give your children a healthier future by choosing better food today
+    </p>
+    <p class="footer-secondary">
+      Start your journey towards fresh, chemical‑free food with 90’s Mart 💚
+    </p>
+  </footer>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <img src="https://90smart.github.io/images/gardener.png">
+      <h3>Direct from Farmers</h3>
+      <p>Harvested and packed fresh</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/snowflake.png">
+      <h3>No Cold Storage</h3>
+      <p>Never stored, straight from farm</p>
+    </div>
+    <div class="feature">
+      <img src="https://90smart.github.io/images/natural-product.png">
+      <h3>Fresh &amp; Natural</h3>
+      <p>No chemicals or preservatives</p>
+    </div>
+  </section>
+
+
+  <!-- SOCIAL MEDIA SECTION -->
+  <div class="social-section">
+    <p>Connect with us on social media</p>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/90smart.in/" target="_blank" aria-label="Instagram">
+        <img src="http://90smart.github.io/images/instagram-2-1-logo-svgrepo-com.svg" alt="Instagram">
       </a>
-      <a href="#" class="btn btn-download">Download App</a>
+
+      <a href="https://www.youtube.com/@90s-Mart" target="_blank" aria-label="YouTube">
+        <img src="https://90smart.github.io/images/youtube-color-svgrepo-com.svg" alt="YouTube">
+      </a>
+    </div>
+  </div>
+  <div class="legal-links">
+    <a href="privacy-policy.html" target="_blank">
+      Privacy Policy
+    </a>
+
+    <span class="separator">|</span>
+
+    <a href="terms-of-service.html" target="_blank">
+      Terms of Service
+    </a>
+  </div>
+  <p class="copyright-text">
+    © 2026 90sMart. All rights reserved.
+  </p>
+
+  <script>
+    const slides = document.querySelectorAll(".hero-carousel img");
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3500);
+
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+  <!-- ABOUT MODAL -->
+  <div class="modal" id="about">
+    <div class="modal-box">
+      <h2>About 90’s Mart</h2>
+      <p>
+        90’s Mart is built on the idea of bringing back traditional
+        and healthy food practices. We work directly with
+        trusted local farmers to source fresh vegetables that are
+        free from harmful chemicals and preservatives.
+        <br><br>
+        Our goal is simple: deliver farm‑fresh products to your home
+        while ensuring quality, transparency, and fair pricing for
+        both consumers and farmers.
+      </p>
+      <div class="close" onclick="closeModal('about')">Close</div>
     </div>
   </div>
 
-</section>
-<footer class="footer-message">
-  <p class="footer-primary">
-    Give your children a healthier future by choosing better food today
-  </p>
-  <p class="footer-secondary">
-    Start your journey towards fresh, chemical‑free food with 90’s Mart 💚
-  </p>
-</footer>
-
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">
-    <img src="https://90smart.github.io/images/gardener.png">
-    <h3>Direct from Farmers</h3>
-    <p>Harvested and packed fresh</p>
+  <!-- CONTACT MODAL -->
+  <div class="modal" id="contact">
+    <div class="modal-box">
+      <h2>Contact Us</h2>
+      <p>
+        📍 Karimnagar, India<br><br>
+        📧 Email: 90smartindia@gmail.com<br>
+        📞 Phone: +91 9XXX XXX XXX<br><br>
+        We are available 24/7,
+        9:00 AM – 8:00 PM.
+      </p>
+      <div class="close" onclick="closeModal('contact')">Close</div>
+    </div>
   </div>
-  <div class="feature">
-    <img src="https://img.icons8.com/color/96/snowflake.png">
-    <h3>No Cold Storage</h3>
-    <p>Never stored, straight from farm</p>
-  </div>
-  <div class="feature">
-    <img src="https://90smart.github.io/images/natural-product.png">
-    <h3>Fresh &amp; Natural</h3>
-    <p>No chemicals or preservatives</p>
-  </div>
-</section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const text =
+        "Connecting local farmers with families who value real food.";
 
+      const typingSpeed = 80;      // ms per letter
+      const pauseAfterType = 1500; // pause before fade out
+      const fadeDuration = 800;    // match CSS transition
 
-<!-- SOCIAL MEDIA SECTION -->
-<div class="social-section">
-  <p>Connect with us on social media</p>
+      const el = document.getElementById("typewriter");
+      let index = 0;
 
-  <div class="social-icons">
-    <a href="https://www.instagram.com/90smart.in/" target="_blank" aria-label="Instagram">
-      <img src="http://90smart.github.io/images/instagram-2-1-logo-svgrepo-com.svg" alt="Instagram">
-    </a>
-
-    <a href="https://www.youtube.com/@90s-Mart" target="_blank" aria-label="YouTube">
-      <img src="https://90smart.github.io/images/youtube-color-svgrepo-com.svg" alt="YouTube">
-    </a>
-  </div>
-</div>
-<div class="legal-links">
-  <a href="privacy-policy.html" target="_blank">
-    Privacy Policy
-  </a>
-
-  <span class="separator">|</span>
-
-  <a href="terms-of-service.html" target="_blank">
-    Terms of Service
-  </a>
-</div>
-<p class="copyright-text">
-  © 2026 90sMart. All rights reserved.
-</p>
-
-<script>
-  const slides = document.querySelectorAll(".hero-carousel img");
-  let index = 0;
-
-  setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }, 3500);
-
-  function openModal(id) {
-    document.getElementById(id).style.display = "flex";
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
-</script>
-<!-- ABOUT MODAL -->
-<div class="modal" id="about">
-  <div class="modal-box">
-    <h2>About 90’s Mart</h2>
-    <p>
-      90’s Mart is built on the idea of bringing back traditional
-      and healthy food practices. We work directly with
-      trusted local farmers to source fresh vegetables that are
-      free from harmful chemicals and preservatives.
-      <br><br>
-      Our goal is simple: deliver farm‑fresh products to your home
-      while ensuring quality, transparency, and fair pricing for
-      both consumers and farmers.
-    </p>
-    <div class="close" onclick="closeModal('about')">Close</div>
-  </div>
-</div>
-
-<!-- CONTACT MODAL -->
-<div class="modal" id="contact">
-  <div class="modal-box">
-    <h2>Contact Us</h2>
-    <p>
-      📍 Karimnagar, India<br><br>
-      📧 Email: 90smartindia@gmail.com<br>
-      📞 Phone: +91 9XXX XXX XXX<br><br>
-      We are available 24/7,
-      9:00 AM – 8:00 PM.
-    </p>
-    <div class="close" onclick="closeModal('contact')">Close</div>
-  </div>
-</div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const text =
-      "Connecting local farmers with families who value real food.";
-
-    const typingSpeed = 80;      // ms per letter
-    const pauseAfterType = 1500; // pause before fade out
-    const fadeDuration = 800;    // match CSS transition
-
-    const el = document.getElementById("typewriter");
-    let index = 0;
-
-    function startTyping() {
-      el.textContent = "";
-      el.style.opacity = "1";
-      index = 0;
-      type();
-    }
-
-    function type() {
-      if (index < text.length) {
-        el.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, typingSpeed);
-      } else {
-        // finished typing → pause → fade out → restart
-        setTimeout(() => {
-          el.style.opacity = "0";
-
-          setTimeout(startTyping, fadeDuration);
-        }, pauseAfterType);
+      function startTyping() {
+        el.textContent = "";
+        el.style.opacity = "1";
+        index = 0;
+        type();
       }
-    }
 
-    startTyping();
-  });
-</script>
+      function type() {
+        if (index < text.length) {
+          el.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, typingSpeed);
+        } else {
+          // finished typing → pause → fade out → restart
+          setTimeout(() => {
+            el.style.opacity = "0";
+
+            setTimeout(startTyping, fadeDuration);
+          }, pauseAfterType);
+        }
+      }
+
+      startTyping();
+    });
+  </script>
 
 
 
 
 </body>
+
 </html>
