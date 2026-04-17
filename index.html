@@ -82,24 +82,57 @@
       z-index: 2;
     }
 
-    .hero h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
+  /* Hero card heading – precise control */
+.hero-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #173f2f;
+  margin-bottom: 24px;
+}
+
+/* First line */
+.hero-line-1 {
+  display: block;
+  line-height: 1.4;
+}
+
+/* Second line */
+.hero-line-2 {
+  display: block;
+  margin-top: 6px;        /* ✅ VISIBLE GAP */
+  line-height: 1.4;
+  text-align: center;    /* ✅ LOWER LINE CENTERED */
+  font-weight: 700;
+}
+
+/* Mobile tuning */
+@media (max-width: 600px) {
+  .hero-heading {
+    font-size: 12px;
+    margin-top: 0px;
+    text-align: center; 
+  }
+
+  .hero-line-2 {
+    margin-top: 4px;
+  }
+}
 
     .hero-buttons {
       display: flex;
       gap: 15px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      justify-content: center; 
     }
 
     .btn {
       padding: 10px 16px;
-      font-size: 14px;
+      font-size: 10px;
       font-weight: 600;
       border-radius: 6px;
       text-decoration: none;
       color: white;
+      white-space: nowrap;
       display: inline-block;
     }
 
@@ -250,6 +283,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 12px;
+  margin-bottom: 60px;  
   gap: 10px;
 }
 
@@ -267,6 +301,12 @@
 .separator {
   color: #4a6656;
   font-size: 13px;
+}
+.copyright-text {
+  text-align: center;
+  font-size: 12px;
+  color: #6a8575;
+  margin: 12px 0 20px;
 }
 
 
@@ -296,7 +336,14 @@
   </div>
 
   <div class="hero-content">
-    <h3>Connecting local farmers with families who value real food.</h3>
+   <h3 class="hero-heading">
+  <span class="hero-line-1">
+    Connecting local farmers with families
+  </span>
+  <span class="hero-line-2">
+    who value real food.
+  </span>
+</h3>
     <div class="hero-buttons">
       <a href="https://webapphosting-73182.web.app"
          target="_blank"
@@ -309,26 +356,6 @@
   </div>
 
 </section>
-
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">
-    <img src="https://90smart.in/images/gardener.png">
-    <h3>Direct from Farmers</h3>
-    <p>Harvested and packed fresh</p>
-  </div>
-  <div class="feature">
-    <img src="https://img.icons8.com/color/96/snowflake.png">
-    <h3>No Cold Storage</h3>
-    <p>Never stored, straight from farm</p>
-  </div>
-  <div class="feature">
-    <img src="https://90smart.in/images/natural-product.png">
-    <h3>Fresh &amp; Natural</h3>
-    <p>No chemicals or preservatives</p>
-  </div>
-</section>
-
 <footer class="footer-message">
   <p class="footer-primary">
     Give your children a healthier future by choosing better food today
@@ -338,17 +365,37 @@
   </p>
 </footer>
 
+<!-- FEATURES -->
+<section class="features">
+  <div class="feature">
+    <img src="https://90smart.github.io/images/gardener.png">
+    <h3>Direct from Farmers</h3>
+    <p>Harvested and packed fresh</p>
+  </div>
+  <div class="feature">
+    <img src="https://img.icons8.com/color/96/snowflake.png">
+    <h3>No Cold Storage</h3>
+    <p>Never stored, straight from farm</p>
+  </div>
+  <div class="feature">
+    <img src="https://90smart.github.io/images/natural-product.png">
+    <h3>Fresh &amp; Natural</h3>
+    <p>No chemicals or preservatives</p>
+  </div>
+</section>
+
+
 <!-- SOCIAL MEDIA SECTION -->
 <div class="social-section">
   <p>Connect with us on social media</p>
 
   <div class="social-icons">
     <a href="https://www.instagram.com/90smart.in/" target="_blank" aria-label="Instagram">
-      <img src="http://90smart.github.io/images/instagram-2-1-logo-svgrepo-com.svg">
+      <img src="http://90smart.github.io/images/instagram-2-1-logo-svgrepo-com.svg" alt="Instagram">
     </a>
 
     <a href="https://www.youtube.com/@90s-Mart" target="_blank" aria-label="YouTube">
-      <img src="https://90smart.github.io/images/youtube-color-svgrepo-com.svg">
+      <img src="https://90smart.github.io/images/youtube-color-svgrepo-com.svg" alt="YouTube">
     </a>
   </div>
 </div>
@@ -361,9 +408,11 @@
 
   <a href="terms-of-service.html" target="_blank">
     Terms of Service
-  </a><br>
+  </a>
 </div>
-
+<p class="copyright-text">
+  © 2026 90sMart. All rights reserved.
+</p>
 
 <script>
   const slides = document.querySelectorAll(".hero-carousel img");
