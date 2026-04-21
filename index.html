@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-<title>90’s Mart (90’sMart) – Farm Fresh Vegetables</title>
+  <title>90’s Mart (90’sMart) – Farm Fresh Vegetables</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://90smart.in/">
   <meta name="description" content="Shop at 90’s Mart, also known as 90’sMart, for farm-fresh, 
     chemical-free vegetables directly from local farmers.">
 
 
-  
+
   <style>
     * {
       margin: 0;
@@ -66,6 +66,19 @@
       transition: opacity 1s ease-in-out;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+
     .hero-carousel img.active {
       opacity: 1;
     }
@@ -107,7 +120,8 @@
       font-weight: 700;
       line-height: 1.4;
       margin-bottom: 10px;
-      min-height: 90px;/* ✅ reserves space for 2 lines */
+      min-height: 90px;
+      /* ✅ reserves space for 2 lines */
       animation: floatingText 4s ease-in-out infinite;
     }
 
@@ -128,7 +142,8 @@
     @media (max-width: 600px) {
 
       .hero-heading {
-        min-height: 90px;/* ✅ reserves space for 2 lines */
+        min-height: 90px;
+        /* ✅ reserves space for 2 lines */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -182,7 +197,7 @@
     .hero-heading {
       text-align: center;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 900;
       line-height: 1.4;
     }
 
@@ -404,6 +419,8 @@
       <a onclick="openModal('contact')">Contact</a>
     </nav>
   </header>
+  <h1 class="visually-hidden">90’s Mart (90’sMart)</h1>
+
 
   <!-- HERO -->
   <section class="hero">
@@ -426,7 +443,8 @@
         <a href="https://farmmart-efa85.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-open">
           Open App
         </a>
-        <a href="https://github.com/90sMart/90smart.github.io/releases/download/90'sMart/90s-Mart.apk" class="btn btn-download">Download App</a>
+        <a href="https://github.com/90sMart/90smart.github.io/releases/download/90'sMart/90s-Mart.apk"
+          class="btn btn-download">Download App</a>
       </div>
     </div>
 
